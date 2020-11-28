@@ -29,10 +29,8 @@
                     $name = "Adrian";
                     $age = 25;
                     $height = 1.67;
-
                     echo "Hola " . $name . "tienes " . $age . " años " . "y tu estaturas es: " . $height . "mts " . "<br>";
                     echo "La variable age es de tipo " . gettype($height);
-
                     ?>
                 </div>
             </div>
@@ -42,13 +40,27 @@
                 <div class="p-3 m-2 bg-primary text-white">
                     <h3>Clase: Operadores</h3> <br>
                     <?php
-                    $num1 =500;
-                    $num2 =100;
+                    $num1 = 500;
+                    $num2 = 100;
                     echo "El resultado de la suma es: " . ($num1 + $num2) . "<br>";
                     echo "El resultado de la resta es: " . ($num1 - $num2) . "<br>";
                     echo "El resultado de la multiplicacion es: " . ($num1 * $num2) . "<br>";
                     echo "El resultado de la division es: " . ($num1 / $num2) . "<br>";
-
+                    ?>
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-12">
+                <div class="p-3 m-2 bg-primary text-white">
+                    <h3>Clase: Condicional</h3> <br>
+                    <?php
+                    $adrian = "Adrian";
+                    if ($adrian == "adrian") {
+                        echo "hola Adrian";
+                    } else if ($adrian == "Adrian") {
+                        echo "Te equivocaste";
+                    }
                     ?>
                 </div>
             </div>

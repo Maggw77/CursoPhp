@@ -88,11 +88,10 @@
                     <h3>Clase: Bucle While</h3> <br>
                     <?php
                     $optionn = 5;
-                    while($optionn <=10) {
-                        echo "El numero es: " .$optionn . "<br>";
+                    while ($optionn <= 10) {
+                        echo "El numero es: " . $optionn . "<br>";
                         $optionn++;
                     }
-                    
                     ?>
                 </div>
             </div>
@@ -101,11 +100,108 @@
                     <h3>Clase: Bucle For</h3> <br>
                     <?php
                     $optionn = 5;
-                    for ($i=0; $i<=$optionn;$i++) {
-                         echo "El numero: " . $i . "<br>";
-
+                    for ($i = 0; $i <= $optionn; $i++) {
+                        echo "El numero: " . $i . "<br>";
                     }
-                    
+                    ?>
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-4">
+                <div class="p-3 m-2 bg-danger text-white">
+                    <h4>Clase: Arrays Int</h4> <br>
+                    <?php
+                    $nums = array(1, 5, 6, 8, 10);
+                    echo $nums[3];
+                    for ($i = 0; $i < count($nums); $i++) {
+
+                        echo $nums[$i] . "<br>";
+                    }
+
+                    ?>
+                </div>
+            </div>
+            <div class="col-4">
+                <div class="p-3 m-2 bg-info text-white">
+                    <h4>Clase: Arrays String</h4> <br>
+                    <?php
+                    $letters = array("hola", "soy", "Adrian", "Estoy aprendiento", "PHP");
+
+                    for ($i = 0; $i < count($letters); $i++) {
+
+                        echo $letters[$i] . "<br>";
+                    }
+
+                    ?>
+                </div>
+            </div>
+            <div class="col-4">
+                <div class="p-3 m-2 bg-primary text-white">
+                    <h4>Clase: Arrays Forech</h4> <br>
+                    <?php
+                    $names = array("Adrian", "Marlon", "Edison", "Marco");
+
+                    foreach ($names as $name) {
+                        echo $name . "<br>";
+                    }
+                    ?>
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-6">
+                <div class="p-3 m-2 bg-warning text-white">
+                    <h3>Clase: Break</h3> <br>
+                    <?php
+                    $lastnames = array("Gonzalez", "Garzona", "Alvarez", "Enriquez");
+
+                    foreach ($lastnames as $lastname) {
+                        if ($lastname == "Alvarez") {
+                            break;
+                        }
+                        echo $lastname . "<br>";
+                    }
+                    ?>
+                </div>
+            </div>
+            <div class="col-6">
+                <div class="p-3 m-2 bg-success text-white">
+                    <h3>Clase: Continue</h3> <br>
+                    <?php
+                    $names = array("Adrian", "Marlon", "Edison", "Marco");
+
+                    foreach ($names as $name) {
+                        if ($name == "Marlon") {
+                            continue;
+                        }
+                        echo $name . "<br>";
+                    }
+                    ?>
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-12">
+                <div class="p-3 m-2 bg-danger text-white">
+                    <h3>Clase: Funciones</h3> <br>
+                    <?php
+                    function calc($sing, $nump, $nums)
+                    {
+
+                        switch ($sing) {
+                            case "+":
+                                return $nump + $nums;
+                                break;
+                            case "-":
+                                return $nump - $nums;
+                                break;
+                            default:
+                                return 0;
+                        }
+                    }
+                    $result = calc("-", 10, 20);
+                    echo "El resultado es: " . $result;
                     ?>
                 </div>
             </div>

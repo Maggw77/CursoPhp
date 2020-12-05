@@ -21,6 +21,11 @@
     </div>
 
     <div class="container">
+        <?php
+        include('man.php');
+        include('ESCUELA/escuela.php');
+
+        ?>
         <div class="row">
             <div class="col-12">
                 <div class="p-3 m-2 bg-primary text-white">
@@ -202,6 +207,206 @@
                     }
                     $result = calc("-", 10, 20);
                     echo "El resultado es: " . $result;
+                    ?>
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-12">
+                <div class="p-3 m-2 bg-success text-white">
+                    <h3>POO</h3> <br>
+                    <?php
+                    class person
+                    {
+                        public $name;
+                        public $age;
+                        public $profesion;
+                        public $comment;
+
+                        function __construct($name, $age, $profesion, $comment)
+                        {
+                            $this->name = $name;
+                            $this->age = $age;
+                            $this->profesion = $profesion;
+                            $this->comment = $comment;
+                        }
+                        public function gethi()
+                        {
+                            return "Hola " . $this->name . " Tienes " . $this->age . " Años, tu quieres ser " . $this->profesion . " y hoy quieres " . $this->comment;
+                        }
+                    }
+                    $Marlon = new person("Marlon", 25, "Ingeniero", "aprender Laravel");
+                    $Marcos = new person("Marcos", 20, "Ingeniero", "aprender PHP");
+                    echo $Marlon->gethi() . "<br>";
+                    echo $Marcos->gethi();
+                    ?>
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-12">
+                <div class="p-3 m-2 bg-primary text-white">
+                    <h3>Clase: Herencia</h3> <br>
+                    <?php
+                    class student
+                    {
+                        public $nombre;
+                        public $edad;
+
+                        function __construct($nombre, $edad)
+
+                        {
+                            $this->nombre = $nombre;
+                            $this->edad = $edad;
+                        }
+                        public function hola()
+                        {
+
+                            return "hola " . $this->nombre . " tienes " . $this->edad . " años";
+                        }
+                    }
+                    class alumno extends student
+                    {
+
+                        public function coestas()
+                        {
+                            return "como estas";
+                        }
+                    }
+
+                    $Allan = new alumno("Allan", 30);
+                    echo $Allan->hola() . "<br>";
+                    echo $Allan->coestas();
+
+                    ?>
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-12">
+                <div class="p-3 m-2 bg-info text-white">
+                    <h3>Metodos estaticos</h3> <br>
+                    <?php
+                    class estatico
+                    {
+
+                        public static function pruebasum($uno, $dos)
+                        {
+
+                            return $uno + $dos;
+                        }
+                        public static function prueresta($uno, $dos)
+                        {
+
+                            return $uno - $dos;
+                        }
+                    }
+                    echo "La suma es: " . estatico::pruebasum(10, 10) . "<br>";
+                    echo "La resta es: " . estatico::prueresta(30, 10);
+                    ?>
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-6">
+                <div class="p-3 m-2 bg-success text-white">
+                    <h3>Formularios</h3> <br>
+                    <form class="form-inline" method="post" action="#">
+                        <div class="form-group mx-sm-3 mb-2">
+                            <label for="id" class="sr-only">Primer Numero</label>
+                            <input type="text" class="form-control" id="num1" name="num1" placeholder="Primer numero">
+                        </div>
+                        <div class="form-group mx-sm-3 mb-2">
+                            <label for="id" class="sr-only">Segundo Numero</label>
+                            <input type="text" class="form-control" id="num2" name="num2" placeholder="Segundo numero">
+                        </div>
+                        <button type="text" class="btn btn-primary mb-2">Realizar suma</button>
+                    </form>
+                </div>
+            </div>
+            <div class="col-6">
+                <div class="p-3 m-2 bg-dark text-white">
+                    <h3>Resultado</h3> <br>
+                    <?php
+                    if (isset($_POST['num1']) && isset($_POST['num2'])) {
+                        echo $_POST['num1'] + $_POST['num2'];
+                    } else {
+                        echo "Esperando suma......";
+                    }
+
+                    ?>
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-6">
+                <div class="p-3 m-2 bg-success text-white">
+                    <h3>Formularios Get</h3> <br>
+                    <form class="form-inline" method="get" action="#">
+                        <div class="form-group mx-sm-1 mb-2">
+                            <input type="number" class="form-control" id="num3" name="num3" placeholder="">
+                        </div>
+                        <div class="form-group mx-sm-1 mb-2">
+                            <input type="number" class="form-control" id="num4" name="num4" placeholder="">
+                        </div>
+                        <button type="text" class="btn btn-primary mb-2">Operar</button>
+                    </form>
+                </div>
+            </div>
+            <div class="col-6">
+                <div class="p-3 m-2 bg-dark text-white">
+                    <h3>Resultado Calculadora</h3> <br>
+                    <?php
+                    if (isset($_GET['num3']) && isset($_GET['num4'])) {
+                        $result = $_GET['num3'] + $_GET['num4'];
+                        echo "El resultado es: " . $result;
+                    } else {
+                        echo "Esperando Respuesta";
+                    }
+
+                    ?>
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-6">
+                <div class="p-3 m-2 bg-success text-white">
+                    <h3>Formularios Post</h3> <br>
+                    <form class="form-inline" method="post" action="#">
+                        <div class="form-group mx-sm-1 mb-2">
+                            <input type="number" class="form-control" id="num3" name="num3" placeholder="">
+                        </div>
+                        <div class="form-group mx-sm-1 mb-2">
+                            <input type="number" class="form-control" id="num4" name="num4" placeholder="">
+                        </div>
+                        <button type="text" class="btn btn-primary mb-2">Operar</button>
+                    </form>
+                </div>
+            </div>
+            <div class="col-6">
+                <div class="p-3 m-2 bg-dark text-white">
+                    <h3>Resultado Calculadora</h3> <br>
+                    <?php
+                    if (isset($_POST['num3']) && isset($_POST['num4'])) {
+                        $result = $_POST['num3'] + $_POST['num4'];
+                        echo "El resultado es: " . $result;
+                    } else {
+                        echo "Esperando Respuesta";
+                    }
+
+                    ?>
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-12">
+                <div class="p-3 m-2 bg-primary text-white">
+                    <h3>Include</h3> <br>
+                    <?php
+                    $Gonzalez = new Man("Adrian", "Gonzalez");
+                    $Liceo =new \escuelas\escuela("Liceo centroamericano","Santa Rosita","Privado");
+                    echo $Gonzalez->greetings() . "<br>";
+                    echo $Liceo->getescuela();
                     ?>
                 </div>
             </div>
